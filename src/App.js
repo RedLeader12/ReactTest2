@@ -20,8 +20,10 @@ class App extends Component {
   render() {
 
     let letters = this.state.letters.map(letter => {
+      let idletter = Math.floor(Math.random() * 30)
       return <Char 
       letter= {letter}
+      key= {idletter}
       />
     })
 
