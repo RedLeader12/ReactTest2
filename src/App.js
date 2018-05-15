@@ -16,14 +16,21 @@ class App extends Component {
     this.setState({letters: letter, length: length})
   }
 
+  deleteLetterHandler = (index) => {
+    const chosen = [...this.state.letters]
+    chosen.splice(index,1);
+    this.setState({letters: chosen})
+  }
+
 
   render() {
 
-    let letters = this.state.letters.map(letter => {
-      let idletter = Math.floor(Math.random() * 30)
+    let letters = this.state.letters.map((letter,index) => {
+      let idletter = index + 1
       return <Char 
       letter= {letter}
       key= {idletter}
+      click={() => this.deleteLetterHandler(index)}
       />
     })
 

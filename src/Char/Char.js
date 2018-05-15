@@ -4,7 +4,7 @@ const char = (props) => {
 
     return (
     <div>
-        <p> {props.letter}</p> 
+        <p onClick={props.click}> {props.letter}</p> 
     </div> 
     )
 };
