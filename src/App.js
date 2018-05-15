@@ -8,17 +8,17 @@ class App extends Component {
     length: 0
   }
 
-  letterLengthHandler = (event) => {
-    const letter = event.target.value
-    const letterArray = [ ]
-    letterArray.push(letter)
-    this.setState({letters: letterArray})
+  letterInputHandler = (event) => {
+    const letter = event.target.value.split('')
+    this.setState({letters: letter})
+    console.log(this.state.letters)
   }
+
 
   render() {
     return (
       <div className="App">
-        <input type="text" onChange={(event) => this.letterLengthHandler(event)}/>
+        <input type="text" onChange={(event) => this.letterInputHandler(event)}/>
         <p> {this.state.length} </p>
       </div>
     );
