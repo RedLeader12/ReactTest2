@@ -10,8 +10,8 @@ class App extends Component {
 
   letterInputHandler = (event) => {
     const letter = event.target.value.split('')
-    this.setState({letters: letter})
-    console.log(this.state.letters)
+    const length = letter.length
+    this.setState({letters: letter, length: length})
   }
 
 
